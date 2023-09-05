@@ -1,5 +1,6 @@
 const CountryCard = ({ country }) => {
-  console.log(country);
+  const capitals = country.capital?.join(", ");
+
   return (
     <article className="bg-white rounded-md overflow-hidden ligthTheme darkTheme">
       <header className="h-[160px] ligthTheme">
@@ -21,9 +22,9 @@ const CountryCard = ({ country }) => {
           <li>
             <span className="font-semibold">Region:</span> {country.region}
           </li>
-          <li>
-            <span className="font-semibold">Capital: </span>{" "}
-            {country.capital ?? "N/A"}
+          <li className=" line-clamp-1">
+            <span className="font-semibold">Capital: </span>
+            {capitals ?? "N/A"}
           </li>
         </ul>
       </section>
